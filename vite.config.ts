@@ -1,3 +1,4 @@
+import MarkdownItShiki from '@shikijs/markdown-it'
 import vue from '@vitejs/plugin-vue'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
@@ -29,6 +30,18 @@ export default defineConfig({
     }),
 
     Markdown({
+      async markdownItSetup(md) {
+        md.use(
+          await MarkdownItShiki({
+            themes: {
+              light: 'vitesse-light',
+              dark: 'vitesse-dark',
+            },
+            defaultColor: false,
+            cssVariablePrefix: '--s-',
+          }),
+        )
+      },
       headEnabled: true,
     }),
   ],
