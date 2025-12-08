@@ -1,7 +1,10 @@
 import { ViteSSG } from 'vite-ssg'
 import { routes } from 'vue-router/auto-routes'
 import App from './App.vue'
-import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
+import 'virtual:uno.css'
+import './styles/main.css'
+import './styles/markdown.css'
+import './styles/prose.css'
 
 export const createApp = ViteSSG(App, { routes })
