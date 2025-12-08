@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import UnoCSS from 'unocss/vite'
+import Components from 'unplugin-vue-components/vite'
 import Markdown from 'unplugin-vue-markdown/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
@@ -43,6 +44,11 @@ export default defineConfig({
         )
       },
       headEnabled: true,
+    }),
+
+    Components({
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
     }),
   ],
 })
