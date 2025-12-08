@@ -8,3 +8,5 @@ lang: en
 <!-- @layout-full-width -->
 
 Main page
+<Separator />
+<ArticleListLanding />
