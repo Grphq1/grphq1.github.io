@@ -51,6 +51,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/thoughts/unocss-language-server-nix-package': RouteRecordInfo<
+      '/thoughts/unocss-language-server-nix-package',
+      '/thoughts/unocss-language-server-nix-package',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -85,6 +92,12 @@ declare module 'vue-router/auto-routes' {
     'pages/thoughts/index.md': {
       routes:
         | '/thoughts/'
+      views:
+        | never
+    }
+    'pages/thoughts/unocss-language-server-nix-package.md': {
+      routes:
+        | '/thoughts/unocss-language-server-nix-package'
       views:
         | never
     }
