@@ -1,3 +1,4 @@
+import process from 'node:process'
 import MarkdownItShiki from '@shikijs/markdown-it'
 import Vue from '@vitejs/plugin-vue'
 import fs from 'fs-extra'
@@ -9,6 +10,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/grphq1.dev/' : '/',
   plugins: [
     VueRouter({
       routesFolder: 'pages',
