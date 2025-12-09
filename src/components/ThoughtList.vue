@@ -25,7 +25,11 @@ const thoughtsSorted = computed(() =>
       </div>
     </template>
 
-    <article v-for="article in thoughtsSorted" :key="article.path" class="group">
+    <article
+      v-for="article in thoughtsSorted"
+      :key="article.path"
+      class="group"
+    >
       <component
         :is="article.redirect ? 'a' : RouterLink"
         :href="article.redirect"
@@ -39,6 +43,9 @@ const thoughtsSorted = computed(() =>
             <div class="flex items-center justify-between">
               <h3 class="text-heading-sm color-base font-medium">
                 {{ article.title }}
+                <span class="color-base-secondary">
+                  {{ article.subtitle }}
+                </span>
               </h3>
               <time
                 class="ml-sp-2 flex-shrink-0 whitespace-nowrap text-sm color-base-secondary"
@@ -47,6 +54,12 @@ const thoughtsSorted = computed(() =>
               </time>
             </div>
           </div>
+          <p
+            v-if="article.description"
+            class="text-sm color-base-secondary leading-relaxed"
+          >
+            {{ article.description }}
+          </p>
         </div>
       </component>
     </article>

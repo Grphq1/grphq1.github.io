@@ -22,6 +22,8 @@ export function useThoughts() {
         title: frontmatter?.title ?? 'Untitled',
         date: frontmatter?.date ?? '',
         lang: frontmatter?.lang ?? 'en',
+        subtitle: frontmatter?.subtitle ?? '',
+        description: frontmatter?.description,
         redirect: frontmatter?.redirect,
       }
     })
